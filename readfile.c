@@ -20,7 +20,10 @@ int main (int argc, char **argv) {
   }
   while (NULL != fgets(line, MAX, f)) {
     fprintf (stdout, "%s", line);
+    fflush(stdout);
   }
+  fflush(f);
   fclose(f);
+  exit(0);
 }
 

@@ -1,8 +1,5 @@
 pipes 1
 
-# display.c
-fork
-
 # readfile
 fork
 # write
@@ -15,6 +12,7 @@ exec readfile master.txt
 krof
 
 # display
+fork
 push 0
 # pipe index 0
 push 0
