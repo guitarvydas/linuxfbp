@@ -5,9 +5,9 @@
 
 int main (int argc, char **argv) {
   char buff[MAX];
+  fprintf (stdout, "\n");
   while (NULL != fgets(buff, MAX, stdin)) {
     fprintf (stdout, "%s", buff);
-    fflush (stdout);
   }
   exit(0);
 }

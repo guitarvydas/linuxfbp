@@ -7,8 +7,6 @@ push 1
 push 0
 # copy pipe into stdout (1)
 dup 1
-close 0
-close 2
 exec readfile master.txt
 krof
 
@@ -18,8 +16,6 @@ push 1
 push 1
 # copy pipe into stdout
 dup 1
-close 0
-close 2
 exec readfile details.txt
 krof
 
@@ -43,8 +39,6 @@ fork
 push 0
 push 2
 dup 0
-close 0
-close 1
 exec display
 krof
 
