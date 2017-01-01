@@ -32,7 +32,7 @@ dup 3
 push 0
 push 1
 dup 4
-exec collate
+exec collate 3 2 5
 krof
 
 fork
