@@ -1,6 +1,6 @@
 DEST=~/bin
 
-all : ${DEST}/tester ${DEST}/display ${DEST}/readfile ${DEST}/collate
+all : ${DEST}/tester ${DEST}/display ${DEST}/readfile ${DEST}/collate ${DEST}/dot
 
 ${DEST}/tester : tester.c
 	gcc -o ${DEST}/tester tester.c
@@ -13,3 +13,6 @@ ${DEST}/readfile : readfile.c
 
 ${DEST}/collate : collate.c
 	gcc -o ${DEST}/collate collate.c
+
+${DEST}/dot : dot.c
+	gcc -o ${DEST}/dot dot.c

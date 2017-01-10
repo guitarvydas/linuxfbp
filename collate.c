@@ -11,6 +11,7 @@ void usage() {
 #define NPIPES 2
 
 void copy (char *dest, char *src, int len) {
+  // copy src to dest for len characters
   int i;
   for (i = 0 ; i < len; i += 1) {
     dest[i] = src[i];
@@ -32,11 +33,13 @@ int compareTo (char *a, char *b, int len) {
 }
 
 char *receive (char *buff, int len, FILE *f) {
+  // input from a port (file descriptor f)
   char *p = fgets(buff, len, f);
   return p;
 }
 
 void sendOutput(char *buff) {
+  // output to port stdout
   fprintf (stdout, "%s", buff);
 }
 
@@ -94,6 +97,7 @@ int main (int argc, char **argv) {
     p = receive(pArray[low], MAX, inportArray[low]);
     if (p == NULL) {
       count -= 1;
+      pArray[low][0] = '\0';
     }
     if (count == 0) {
       break;
