@@ -1,3 +1,13 @@
+#
+# Simple collate example from com.jpmorrsn.fbp.examples.networks
+#
+# 4 components - readfile to read the master, readfile to read the details,
+# collate and display to show the collate recrods on the concole
+#
+# a total of 3 pipes and two "initializer ports" which we will simulate using
+# the command line (exec1st)
+#
+
 pipes 3
 
 fork

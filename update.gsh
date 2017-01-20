@@ -24,7 +24,7 @@ fork
 push 1 ; write
 push 1 ; pipe index 1
 dup 1  ; copy pipe into stdout
-exec readfile detail.txt
+exec readfile details.txt
 krof
 
 fork
