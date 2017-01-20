@@ -1,5 +1,35 @@
 This code is an experiment to see if FBP can be implemented using Linux as the FBP runtime.
 
+Networks as grash shell scripts:
+
+test.gsh
+- usage: grash test.gsh
+- Simple test of tester.c.
+- "grash test0.gsh" runs tester.c and the 3 lines of output should appear on the console (or stdout).
+
+test1.gsh
+- usage: grash test1.gsh
+- Joins output of readfile (master.txt) to input so display.
+
+testcollate.gsh
+- usage: grash testcollate.gsh
+- Joins output of readfile (master.txt) to input 3 of collate.
+- Joins output of readfile (details.txt) to input 4 of collate.
+- Joins output 1 of collate to input 0 of display.
+- Should result in a collated dump of master+details.
+- When run from linux bash, the next bash prompt appears before the output from display, making it look like the program has not finished.  Just hit ENTER to get another prompt.
+
+testdot.gsh
+- usage: grash testdot.gsh
+- Joins output of readfile (master.txt) to input 3 of dot.
+- Joins output of readfile (details.txt) to input 4 of dot.
+- Joins output 1 of dot to input 0 of display.
+- Should result in one line from master.txt, one line from details.txt and so on until master.txt runs out, then all of the rest of the lines from details.txt.
+- When run from linux bash, the next bash prompt appears before the output from display, making it look like the program has not finished.  Just hit ENTER to get another prompt.
+
+
+Details:
+
 Components run as separate Linux commands.  At present, all components are written in C, but this does not preclude the use of any other language.
 
 Flows (wires) are implemented as Linux pipes.  In the future, they could be implemented as unnamed pipes, sockets, etc.
@@ -69,27 +99,3 @@ dot.c
  - Outputs one line from each open input, until all inputs are closed.
 
 
-Networks as grash shell scripts:
-
-test.gsh
-- Simple test of tester.c.
-- "grash test0.gsh" runs tester.c and the 3 lines of output should appear on the console (or stdout).
-
-test1.gsh
-- Joins output of readfile (master.txt) to input so display.
-
-testcollate.gsh
-- Joins output of readfile (master.txt) to input 3 of collate.
-- Joins output of readfile (details.txt) to input 4 of collate.
-- Joins output 1 of collate to input 0 of display.
-- usage: "grash testcollate.gsh".
-- Should result in a collated dump of master+details.
-- When run from linux bash, the next bash prompt appears before the output from display, making it look like the program has not finished.  Just hit ENTER to get another prompt.
-
-testdot.gsh
-- Joins output of readfile (master.txt) to input 3 of dot.
-- Joins output of readfile (details.txt) to input 4 of dot.
-- Joins output 1 of dot to input 0 of display.
-- usage: "grash testdot.gsh".
-- Should result in one line from master.txt, one line from details.txt and so on until master.txt runs out, then all of the rest of the lines from details.txt.
-- When run from linux bash, the next bash prompt appears before the output from display, making it look like the program has not finished.  Just hit ENTER to get another prompt.
