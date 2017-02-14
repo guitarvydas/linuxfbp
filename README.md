@@ -1,5 +1,30 @@
 This code is an experiment to see if FBP can be implemented using Linux as the FBP runtime.
 
+=== simple instructions to install under linux ===
+
+cd ~
+mkdir bin
+export PATH=$PATH:~/bin
+cd ~/Documents/GitHub
+git clone https://github.com/guitarvydas/linuxfbp
+cd linuxfbp
+make
+grash test.gsh
+
+
+=== to compile under other systems (not tried) ===
+
+Compile tester.c, display.c, readfile.c, collate.c, dot.c and grash.c to executables.
+
+Put the executables on "the path", then invoke
+
+grash.exe test.gsh
+
+
+===================
+# to run the other tests, see "usage: " lines below...
+===================
+
 Networks as grash shell scripts:
 
 test.gsh
