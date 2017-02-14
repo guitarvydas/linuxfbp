@@ -2,14 +2,14 @@ This code is an experiment to see if FBP can be implemented using Linux as the F
 
 === simple instructions to install under linux ===
 
-cd ~
-mkdir bin
-export PATH=$PATH:~/bin
-cd ~/Documents/GitHub
-git clone https://github.com/guitarvydas/linuxfbp
-cd linuxfbp
-make
-grash test.gsh
+    cd ~
+    mkdir bin
+    export PATH=$PATH:~/bin
+    cd ~/Documents/GitHub
+    git clone https://github.com/guitarvydas/linuxfbp
+    cd linuxfbp
+    make
+    grash test.gsh
 
 
 === to compile under other systems (not tried) ===
